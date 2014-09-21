@@ -18,3 +18,21 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历�
 
 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
 
+6.工作区和暂存区
+1> 工作去就是电脑上看到的目录：如我的工作区是：
+	cc@CC-PC:/home/CC/Git/testGit$ ll
+	总用量 20
+	drwxrwxr-x 3 cc cc 4096  9月 21 09:58 ./
+	drwxrwxr-x 3 cc cc 4096  9月 21 09:31 ../
+	drwxrwxr-x 8 cc cc 4096  9月 21 09:41 .git/
+	-rw-rw-r-- 1 cc cc  773  9月 21 09:58 gitCmd.txt
+	-rw-rw-r-- 1 cc cc  760  9月 16 22:43 gitCmd.txt~
+2> 工作区有一个隐藏的目录“.git”，这个不算是工作区，而是git的版本库
+版本库的的stage或index叫暂存区
+git还为我们创建了一个分支master以及一个指向master的指针叫HEAD
+
+向git版本库中添加文件时分为两步：
+1> 用git add将文件添加进去，实际上就是将文件的修改添加到暂存区
+2> 用git commit提交更改，实际上就是将暂存区的所有内容提交到当前分支master
+
+
